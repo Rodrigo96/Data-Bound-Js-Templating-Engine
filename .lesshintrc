@@ -1,0 +1,7 @@
+{
+    "emptyRule": false,
+    "importantRule": false,
+    "trailingWhitespace": false,
+    "propertyOrdering": false,
+    "zeroUnit": false,
+}

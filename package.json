@@ -1,0 +1,32 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "description": "A simple workflow to accelerate front end development",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "csslint-stylish": "0.0.5",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-csslint": "^1.0.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-less": "^3.3.0",
+    "gulp-lesshint": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rodrigo96/Front-End-Workflow.git"
+  },
+  "author": "Rodrigo Alves",
+  "license": "ISC"
+}
