@@ -278,3 +278,51 @@ sup {
  */[hidden] {
   display: none;
 }
+
+.main-wraper {
+  width: 1000px;
+  margin: 0px auto;
+}
+
+.main-wraper .set-wraper {
+  width: auto;
+  margin: 20px auto;
+  padding: 10px 0px;
+  border-radius: 10px;
+  background-color: #c0ffc2;
+}
+
+.main-wraper .set-wraper .item-wraper {
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  padding: 10px;
+  margin: 0px 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #fdffba;
+}
+
+.main-wraper .set-wraper .item-wraper h2,.main-wraper .set-wraper .item-wraper p,.main-wraper .set-wraper .item-wraper i,.main-wraper .set-wraper .item-wraper ul,.main-wraper .set-wraper .item-wraper li {
+  margin: 0px;
+  font-size: 16px;
+  color: #f69d9d;
+}
+
+.main-wraper .set-wraper .item-wraper i {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  text-align: right;
+}
+
+.main-wraper .set-wraper .item-wraper ul {
+  padding: 0px;
+  list-style: none;
+  font-style: italic;
+}
+
+.main-wraper .set-wraper .item-wraper li {
+  font-size: 0.95em;
+}

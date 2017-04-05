@@ -4,4 +4,5 @@
     "trailingWhitespace": false,
     "propertyOrdering": false,
     "zeroUnit": false,
+    "finalNewline": false
 }
