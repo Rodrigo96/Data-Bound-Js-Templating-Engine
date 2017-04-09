@@ -1,18 +1,6 @@
 [
-    { "name" : "Fruits",
-      "listOfItems" : [
-        { "title" : "Apples", "text" : "Are red or green", "id" : "15" },
-        { "title" : "Coconuts", "text" : "Are brown", "id" : "22" },
-        { "title" : "Bananas", "text" : "Are yellow", "id" : "37" },
-        { "title" : "Pears", "text" : "Are green", "id" : "2" }
-      ]
-    },
-    { "name" : "Cities",
-      "listOfItems" : [
-        { "title" : "Lisbon", "text" : "Is a small city", "id" : "24" },
-        { "title" : "Germany", "text" : "Is a country", "id" : "9" },
-        { "title" : "Madrid", "text" : "Is Spains capital", "id" : "11" },
-        { "title" : "New York", "text" : "Is Amazing", "id" : "31" }
-      ]
-    }
+    { "id" : "32" },
+    { "id" : "27" },
+    { "id" : "17" },
+    { "id" : "50" }
 ]
