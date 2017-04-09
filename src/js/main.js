@@ -1,5 +1,26 @@
 var jet = {
-  fillData: function(tpl, data) {
+  buildHtml: function (tpl, data) {
+    var reComponentStart = /<@ ([^\/].+?) @>/g,
+        match,
+        output = '';
+
+    while (match = reComponentStart.exec(tpl)) {
+      var componentInfo = { 
+            start: match.index,
+            name:  match[1].trim().split(' ')[0]
+          },
+          reComponentEnd = new RegExp('<@ /' + componentInfo.name + ' @>', 'g'),
+          matchEnd = reComponentEnd.exec(tpl);
+
+      componentInfo.end = matchEnd.index + matchEnd[0].length;
+
+      console.log(match, matchEnd);
+    }
+    // if components call buildHtml() with components
+    // else fillData
+    // return html
+  },
+  fillData: function (tpl, data) {
     var reIntructions = /<%(.+?)%>/g,
         reJS = /(^( )?(if|for|else|switch|case|break|{|}))(.*)?/g,
         code = 'var result = [];\n',
@@ -54,7 +75,7 @@ var jet = {
         if (response.currentTarget.status === 200 && getData.readyState === 4 && getComponents.readyState === 4) {
           components = getComponents.response;
           data = JSON.parse(getData.response);
-          console.log(data);
+          jet.buildHtml(components, data);
           generatedHtml = jet.fillData(components, data);
           document.body.innerHTML += generatedHtml;
         }
