@@ -22,7 +22,6 @@
         if (response.currentTarget.status === 200 && getData.readyState === 4 && getComponents.readyState === 4) {
           components = getComponents.response;
           data = JSON.parse(getData.response);
-          //generatedHtml = jet.fillData(components, data);
           generatedHtml = jet.buildHtml(components, data);
           document.body.innerHTML += generatedHtml;
         }
