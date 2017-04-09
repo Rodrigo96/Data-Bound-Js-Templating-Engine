@@ -1,1 +1,4 @@
-# Data-Bound-Js-Templating-Engine
+# Jet Templating Library
+
+## Note
+This is just a prototype.
