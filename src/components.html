@@ -5,7 +5,9 @@
                 <div class="item-wraper">
                     <h2><% this.title %></h2>
                     <p><% this.text %></p>
-                    <i><% this.id %></i>
+                    <% if (this.id) { %>
+                        <i><% this.id %></i>
+                    <% } %>
                 </div>
             <@ /item-wraper @>
         </div>
