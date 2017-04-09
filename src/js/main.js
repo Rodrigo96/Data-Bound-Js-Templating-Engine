@@ -2,9 +2,10 @@ var jet = {
   buildHtml: function (tpl, data) {
     var reComponentStart = /<@ ([^\/].+?) @>/g,
         match,
-        output = '';
+        componentsHtml = '';
+        output = tpl;
 
-    while (match = reComponentStart.exec(tpl)) {
+    while (match = reComponentStart.exec(output)) {
       var componentInfo = { 
             start: match.index,
             name:  match[1].trim().split(' ')[0]
@@ -14,11 +15,17 @@ var jet = {
 
       componentInfo.end = matchEnd.index + matchEnd[0].length;
 
-      console.log(match, matchEnd);
+      for (var i = 0; i < data.length; i++) {
+        componentsHtml += this.buildHtml(tpl.slice(match.index + match[0].length, matchEnd.index), data[i]);
+      }
+
+      output = tpl.slice(0, componentInfo.start) + componentsHtml + tpl.slice(componentInfo.end);
     }
-    // if components call buildHtml() with components
-    // else fillData
-    // return html
+
+    console.log(this.fillData(output, data));
+    return this.fillData(output, data);
+    //console.log(output);
+    //return output;
   },
   fillData: function (tpl, data) {
     var reIntructions = /<%(.+?)%>/g,
@@ -75,8 +82,8 @@ var jet = {
         if (response.currentTarget.status === 200 && getData.readyState === 4 && getComponents.readyState === 4) {
           components = getComponents.response;
           data = JSON.parse(getData.response);
-          jet.buildHtml(components, data);
-          generatedHtml = jet.fillData(components, data);
+          //generatedHtml = jet.fillData(components, data);
+          generatedHtml = jet.buildHtml(components, data);
           document.body.innerHTML += generatedHtml;
         }
       }

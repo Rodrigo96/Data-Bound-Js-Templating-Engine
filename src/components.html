@@ -1,17 +1,13 @@
 <div class="main-wraper">
-    <div class="set-wraper">
-        <% for (var i = 0; i < 5; i++) {%>
-            <div class="item-wraper">
-                <h2><% this.title %></h2>
-                <p><% this.text %></p>
-                <i><% this.id %></i>
-            </div>
-        <% } %>
-    </div>
+    <@ set-wraper @>
+        <div class="set-wraper">
+            <@ item-wraper @>
+                <div class="item-wraper">
+                    <h2><% this.title %></h2>
+                    <p><% this.text %></p>
+                    <i><% this.id %></i>
+                </div>
+            <@ /item-wraper @>
+        </div>
+    <@ /set-wraper @>
 </div>
-<@ set-wraper prop="list" @>
-<@ /set-wraper @>
-<@ another prop="list" @>
-<@ /another @>
-<@ one prop="list" @>
-<@ /one @>
