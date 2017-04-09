@@ -292,6 +292,11 @@ sup {
   background-color: #c0ffc2;
 }
 
+.main-wraper .set-wraper h2 {
+  margin: 10px 10px;
+  color: #f69d9d;
+}
+
 .main-wraper .set-wraper .item-wraper {
   position: relative;
   display: inline-block;
@@ -305,7 +310,6 @@ sup {
 }
 
 .main-wraper .set-wraper .item-wraper h2,.main-wraper .set-wraper .item-wraper p,.main-wraper .set-wraper .item-wraper i,.main-wraper .set-wraper .item-wraper ul,.main-wraper .set-wraper .item-wraper li {
-  max-width: 100%;
   margin: 0px;
   color: #f69d9d;
 }

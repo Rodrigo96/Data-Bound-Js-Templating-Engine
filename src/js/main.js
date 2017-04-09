@@ -5,54 +5,40 @@ var jet = {
         componentsHtml = '';
         output = tpl;
 
-    /*while (match = reComponentStart.exec(output)) {
-      console.log(match);
-      var componentInfo = { 
-            start: match.index,
-            name:  match[1].trim().split(' ')[0]
-          },
-          reComponentEnd = new RegExp('<@ /' + componentInfo.name + ' @>', 'g'),
-          matchEnd = reComponentEnd.exec(tpl);
-
-      componentInfo.end = matchEnd.index + matchEnd[0].length;
-
-      console.log(componentInfo);
-
-      for (var i = 0; i < data.length; i++) {
-        componentsHtml += this.buildHtml(tpl.slice(match.index + match[0].length, matchEnd.index), data[i]);
-      }
-
-      console.log(componentsHtml);
-
-      output = tpl.slice(0, componentInfo.start) + componentsHtml + tpl.slice(componentInfo.end);
-    }*/
-
     while (match = reComponentStart.exec(output)) {
       var componentInfo = { 
             start: match.index,
             name:  match[1].trim().split(' ')[0]
           },
           reComponentEnd = new RegExp('<@ /' + componentInfo.name + ' @>', 'g'),
-          matchEnd = reComponentEnd.exec(output);
+          matchEnd = reComponentEnd.exec(output),
+          componentProp = /prop="(.+?)"/g.exec(match[1]),
+          dataLoop = data;
+
+      console.log(componentProp);
 
       componentInfo.end = matchEnd.index + matchEnd[0].length;
       componentInfo.content = output.slice(match.index + match[0].length, matchEnd.index);
+      componentInfo.prop = componentProp ? componentProp[1] : '';
       componentsHtml = '';
+
+      if (componentInfo.prop)
+        dataLoop = data[componentInfo.prop];
+
+      console.log(componentInfo.prop);
 
       var outputStart = output.slice(0, componentInfo.start),
           outputEnd = output.slice(componentInfo.end);
 
-      console.log(componentInfo);
-
-      for (var i = 0; i < data.length; i++) {
+      for (var i = 0; i < dataLoop.length; i++) {
         //console.log(output);
-        componentsHtml += this.buildHtml(componentInfo.content, data[i]);
-        console.log(componentsHtml);
+        componentsHtml += this.buildHtml(componentInfo.content, dataLoop[i]);
+        //console.log(componentsHtml);
       }
 
       output = outputStart + componentsHtml + outputEnd;
 
-      console.log(output);
+      //console.log(output);
 
     }
 

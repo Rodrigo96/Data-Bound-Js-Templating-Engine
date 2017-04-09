@@ -1,7 +1,8 @@
 <div class="main-wraper">
     <@ set-wraper @>
         <div class="set-wraper">
-            <@ item-wraper @>
+            <h2><% this.name %></h2>
+            <@ item-wraper prop="listOfItems" @>
                 <div class="item-wraper">
                     <h2><% this.title %></h2>
                     <p><% this.text %></p>
