@@ -1,5 +1,16 @@
-<@ component @>
-<div>
-    <% this.id %>
+<div class="main-wraper">
+    <@ set-wraper @>
+        <div class="set-wraper">
+            <h2><% this.name %></h2>
+            <@ item-wraper prop="listOfItems" @>
+                <div class="item-wraper">
+                    <h2><% this.title %></h2>
+                    <p><% this.text %></p>
+                    <% if (this.id) { %>
+                        <i><% this.id %></i>
+                    <% } %>
+                </div>
+            <@ /item-wraper @>
+        </div>
+    <@ /set-wraper @>
 </div>
-<@ /component @>

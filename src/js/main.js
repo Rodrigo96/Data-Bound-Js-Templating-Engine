@@ -6,7 +6,7 @@
 
       var getComponents = new XMLHttpRequest(),
           getData = new XMLHttpRequest(),
-          generatedHtml = '<p>testing</p>',
+          generatedHtml = '',
           components,
           data;
 
