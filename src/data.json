@@ -2,9 +2,10 @@
     { "name" : "Fruits",
       "listOfItems" : [
         { "title" : "Apples", "text" : "Are red or green", "id" : "15" },
-        { "title" : "Coconuts", "text" : "Are brown", "id" : "22" },
+        { "title" : "Coconuts", "text" : "Are brown" },
         { "title" : "Bananas", "text" : "Are yellow", "id" : "37" },
-        { "title" : "Pears", "text" : "Are green", "id" : "2" }
+        { "title" : "Pears", "text" : "Are green" },
+        { "title" : "Pears", "text" : "Are green" }
       ]
     },
     { "name" : "Cities",
@@ -12,7 +13,14 @@
         { "title" : "Lisbon", "text" : "Is a small city" },
         { "title" : "Germany", "text" : "Is a country" },
         { "title" : "Madrid", "text" : "Is Spains capital", "id" : "11" },
-        { "title" : "New York", "text" : "Is Amazing" }
+        { "title" : "New York", "text" : "Is Amazing", "id" : "31" }
       ]
+    },
+    { "name" : "Objects",
+        "listOfItems" : [
+        { "title" : "Hat", "text" : "Is cool", "id" : "872" },
+        { "title" : "Bench", "text" : "Sit on it", "id" : "256" },
+        { "title" : "Ball", "text" : "Has no corners", "id" : "11" }
+        ]
     }
 ]

@@ -5,7 +5,9 @@
             <@ item-wraper prop="listOfItems" @>
                 <div class="item-wraper">
                     <h2><% this.title %></h2>
-                    <p><% this.text %></p>
+                    <% for (var i = 0; i < 4; i++) { %>
+                        <p><% this.text %></p>
+                    <% } %>
                     <% if (this.id) { %>
                         <i><% this.id %></i>
                     <% } else { %>
